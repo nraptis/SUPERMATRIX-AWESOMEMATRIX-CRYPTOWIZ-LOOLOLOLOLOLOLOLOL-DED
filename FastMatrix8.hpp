@@ -160,8 +160,6 @@ public:
     
     
     
-    
-    
     void                                        FlipHorizontal();
     void                                        FlipHorizontalBlocks();
     
@@ -207,6 +205,21 @@ public:
     void                                        FlipVerticalEachSixteenthEachQuarter();
     
     
+    
+    void                                        PinwheelRight();
+    void                                        PinwheelRightQuarterA();
+    void                                        PinwheelRightQuarterB();
+    void                                        PinwheelRightQuarterC();
+    void                                        PinwheelRightQuarterD();
+    void                                        PinwheelRightEachQuarter();
+
+
+    void                                        PinwheelLeft();
+    void                                        PinwheelLeftQuarterA();
+    void                                        PinwheelLeftQuarterB();
+    void                                        PinwheelLeftQuarterC();
+    void                                        PinwheelLeftQuarterD();
+    void                                        PinwheelLeftEachQuarter();
     
     
     // Testing

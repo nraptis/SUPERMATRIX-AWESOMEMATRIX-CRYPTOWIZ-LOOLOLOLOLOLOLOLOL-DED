@@ -2426,4 +2426,192 @@ FM8 u() {
     }
 }
 
+- (void)testPinwheelRight {
+    FM8 aMatrix = u();
+    aMatrix.PinwheelRight();
+    FM8 aExpected = {{
+        {32,24,16, 8, 0, 1, 2, 3},
+        {40,12,13,14,22,30,38, 4},
+        {48,11,34,26,18,19,46, 5},
+        {56,10,42,28,36,20,54, 6},
+        {57, 9,43,27,35,21,53, 7},
+        {58,17,44,45,37,29,52,15},
+        {59,25,33,41,49,50,51,23},
+        {60,61,62,63,55,47,39,31}
+    }};
+
+    if (aMatrix != aExpected) {
+        XCTFail("PinwheelRight failed");
+    }
+}
+
+- (void)testPinwheelRightQuarterA {
+
+    FM8 aMatrix = {{
+        { 1,  2,  3,  4, 99,98,97,96},
+        { 5,  6,  7,  8, 95,94,93,92},
+        { 9, 10, 11, 12, 91,90,89,88},
+        {13, 14, 15, 16, 87,86,85,84},
+        {83,82,81,80,79,78,77,76},
+        {75,74,73,72,71,70,69,68},
+        {67,66,65,64,63,62,61,60},
+        {59,58,57,56,55,54,53,52}
+    }};
+
+    aMatrix.PinwheelRightQuarterA();
+
+    FM8 aExpected = {{
+        { 9,  5,  1,  2, 99,98,97,96},
+        {13,  7, 11,  3, 95,94,93,92},
+        {14,  6, 10,  4, 91,90,89,88},
+        {15, 16, 12,  8, 87,86,85,84},
+        {83,82,81,80,79,78,77,76},
+        {75,74,73,72,71,70,69,68},
+        {67,66,65,64,63,62,61,60},
+        {59,58,57,56,55,54,53,52}
+    }};
+
+    if (aMatrix != aExpected) {
+        XCTFail("PinwheelRightQuarterA failed");
+    }
+}
+
+- (void)testPinwheelRightQuarterB {
+
+    FM8 aMatrix = {{
+        {99,98,97,96,  1,  2,  3,  4},
+        {95,94,93,92,  5,  6,  7,  8},
+        {91,90,89,88,  9, 10, 11, 12},
+        {87,86,85,84, 13, 14, 15, 16},
+        {83,82,81,80, 79,78,77,76},
+        {75,74,73,72, 71,70,69,68},
+        {67,66,65,64, 63,62,61,60},
+        {59,58,57,56, 55,54,53,52}
+    }};
+
+    aMatrix.PinwheelRightQuarterB();
+
+    FM8 aExpected = {{
+        {99,98,97,96,  9,  5,  1,  2},
+        {95,94,93,92, 13,  7, 11,  3},
+        {91,90,89,88, 14,  6, 10,  4},
+        {87,86,85,84, 15, 16, 12,  8},
+        {83,82,81,80, 79,78,77,76},
+        {75,74,73,72, 71,70,69,68},
+        {67,66,65,64, 63,62,61,60},
+        {59,58,57,56, 55,54,53,52}
+    }};
+
+    if (aMatrix != aExpected) {
+        XCTFail("PinwheelRightQuarterB failed");
+    }
+}
+
+- (void)testPinwheelRightQuarterC {
+
+    FM8 aMatrix = {{
+        {99,98,97,96,95,94,93,92},
+        {91,90,89,88,87,86,85,84},
+        {83,82,81,80,79,78,77,76},
+        {75,74,73,72,71,70,69,68},
+        { 1,  2,  3,  4,67,66,65,64},
+        { 5,  6,  7,  8,63,62,61,60},
+        { 9, 10, 11, 12,59,58,57,56},
+        {13, 14, 15, 16,55,54,53,52}
+    }};
+
+    aMatrix.PinwheelRightQuarterC();
+
+    FM8 aExpected = {{
+        {99,98,97,96,95,94,93,92},
+        {91,90,89,88,87,86,85,84},
+        {83,82,81,80,79,78,77,76},
+        {75,74,73,72,71,70,69,68},
+        { 9,  5,  1,  2,67,66,65,64},
+        {13,  7, 11,  3,63,62,61,60},
+        {14,  6, 10,  4,59,58,57,56},
+        {15, 16, 12,  8,55,54,53,52}
+    }};
+
+    if (aMatrix != aExpected) {
+        XCTFail("PinwheelRightQuarterC failed");
+    }
+}
+
+- (void)testPinwheelRightQuarterD {
+
+    FM8 aMatrix = {{
+        {99,98,97,96,95,94,93,92},
+        {91,90,89,88,87,86,85,84},
+        {83,82,81,80,79,78,77,76},
+        {75,74,73,72,71,70,69,68},
+        {67,66,65,64,  1,  2,  3,  4},
+        {63,62,61,60,  5,  6,  7,  8},
+        {59,58,57,56,  9, 10, 11, 12},
+        {55,54,53,52, 13, 14, 15, 16}
+    }};
+
+    aMatrix.PinwheelRightQuarterD();
+
+    FM8 aExpected = {{
+        {99,98,97,96,95,94,93,92},
+        {91,90,89,88,87,86,85,84},
+        {83,82,81,80,79,78,77,76},
+        {75,74,73,72,71,70,69,68},
+        {67,66,65,64,  9,  5,  1,  2},
+        {63,62,61,60, 13,  7, 11,  3},
+        {59,58,57,56, 14,  6, 10,  4},
+        {55,54,53,52, 15, 16, 12,  8}
+    }};
+
+    if (aMatrix != aExpected) {
+        XCTFail("PinwheelRightQuarterD failed");
+    }
+}
+
+- (void)testPinwheelLeft {
+    FM8 aMatrix = u();
+    aMatrix.PinwheelRight();
+    aMatrix.PinwheelLeft();
+    if (aMatrix != u()) {
+        XCTFail("PinwheelLeft failed");
+    }
+}
+
+- (void)testPinwheelLeftQuarterA {
+    FM8 aMatrix = u();
+    aMatrix.PinwheelRightQuarterA();
+    aMatrix.PinwheelLeftQuarterA();
+    if (aMatrix != u()) {
+        XCTFail("PinwheelLeftQuarterA failed");
+    }
+}
+
+- (void)testPinwheelLeftQuarterB {
+    FM8 aMatrix = u();
+    aMatrix.PinwheelRightQuarterB();
+    aMatrix.PinwheelLeftQuarterB();
+    if (aMatrix != u()) {
+        XCTFail("PinwheelLeftQuarterB failed");
+    }
+}
+
+- (void)testPinwheelLeftQuarterC {
+    FM8 aMatrix = u();
+    aMatrix.PinwheelRightQuarterC();
+    aMatrix.PinwheelLeftQuarterC();
+    if (aMatrix != u()) {
+        XCTFail("PinwheelLeftQuarterC failed");
+    }
+}
+
+- (void)testPinwheelLeftQuarterD {
+    FM8 aMatrix = u();
+    aMatrix.PinwheelRightQuarterD();
+    aMatrix.PinwheelLeftQuarterD();
+    if (aMatrix != u()) {
+        XCTFail("PinwheelLeftQuarterD failed");
+    }
+}
+
 @end

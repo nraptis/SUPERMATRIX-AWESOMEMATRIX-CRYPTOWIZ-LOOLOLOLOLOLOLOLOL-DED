@@ -2110,6 +2110,178 @@ void FM8::FlipVerticalSixteenthsEachQuarter() {
     FlipVerticalSixteenthsQuarterD();
 }
 
+void FM8::PinwheelRight() {
+    std::uint8_t *aSrc = mDataBase;
+    std::uint8_t *aDst = mTemp;
+    aDst[ 0] = aSrc[32]; aDst[ 1] = aSrc[24]; aDst[ 2] = aSrc[16]; aDst[ 3] = aSrc[ 8];
+    aDst[ 4] = aSrc[ 0]; aDst[ 5] = aSrc[ 1]; aDst[ 6] = aSrc[ 2]; aDst[ 7] = aSrc[ 3];
+    aDst[ 8] = aSrc[40]; aDst[ 9] = aSrc[12]; aDst[10] = aSrc[13]; aDst[11] = aSrc[14];
+    aDst[12] = aSrc[22]; aDst[13] = aSrc[30]; aDst[14] = aSrc[38]; aDst[15] = aSrc[ 4];
+    aDst[16] = aSrc[48]; aDst[17] = aSrc[11]; aDst[18] = aSrc[34]; aDst[19] = aSrc[26];
+    aDst[20] = aSrc[18]; aDst[21] = aSrc[19]; aDst[22] = aSrc[46]; aDst[23] = aSrc[ 5];
+    aDst[24] = aSrc[56]; aDst[25] = aSrc[10]; aDst[26] = aSrc[42]; aDst[27] = aSrc[28];
+    aDst[28] = aSrc[36]; aDst[29] = aSrc[20]; aDst[30] = aSrc[54]; aDst[31] = aSrc[ 6];
+    aDst[32] = aSrc[57]; aDst[33] = aSrc[ 9]; aDst[34] = aSrc[43]; aDst[35] = aSrc[27];
+    aDst[36] = aSrc[35]; aDst[37] = aSrc[21]; aDst[38] = aSrc[53]; aDst[39] = aSrc[ 7];
+    aDst[40] = aSrc[58]; aDst[41] = aSrc[17]; aDst[42] = aSrc[44]; aDst[43] = aSrc[45];
+    aDst[44] = aSrc[37]; aDst[45] = aSrc[29]; aDst[46] = aSrc[52]; aDst[47] = aSrc[15];
+    aDst[48] = aSrc[59]; aDst[49] = aSrc[25]; aDst[50] = aSrc[33]; aDst[51] = aSrc[41];
+    aDst[52] = aSrc[49]; aDst[53] = aSrc[50]; aDst[54] = aSrc[51]; aDst[55] = aSrc[23];
+    aDst[56] = aSrc[60]; aDst[57] = aSrc[61]; aDst[58] = aSrc[62]; aDst[59] = aSrc[63];
+    aDst[60] = aSrc[55]; aDst[61] = aSrc[47]; aDst[62] = aSrc[39]; aDst[63] = aSrc[31];
+    memcpy(mDataBase, mTemp, 64);
+}
+
+void FM8::PinwheelLeft() {
+    std::uint8_t *aSrc = mDataBase;
+    std::uint8_t *aDst = mTemp;
+    aDst[32] = aSrc[ 0]; aDst[24] = aSrc[ 1]; aDst[16] = aSrc[ 2]; aDst[ 8] = aSrc[ 3];
+    aDst[ 0] = aSrc[ 4]; aDst[ 1] = aSrc[ 5]; aDst[ 2] = aSrc[ 6]; aDst[ 3] = aSrc[ 7];
+    aDst[40] = aSrc[ 8]; aDst[12] = aSrc[ 9]; aDst[13] = aSrc[10]; aDst[14] = aSrc[11];
+    aDst[22] = aSrc[12]; aDst[30] = aSrc[13]; aDst[38] = aSrc[14]; aDst[ 4] = aSrc[15];
+    aDst[48] = aSrc[16]; aDst[11] = aSrc[17]; aDst[34] = aSrc[18]; aDst[26] = aSrc[19];
+    aDst[18] = aSrc[20]; aDst[19] = aSrc[21]; aDst[46] = aSrc[22]; aDst[ 5] = aSrc[23];
+    aDst[56] = aSrc[24]; aDst[10] = aSrc[25]; aDst[42] = aSrc[26]; aDst[28] = aSrc[27];
+    aDst[36] = aSrc[28]; aDst[20] = aSrc[29]; aDst[54] = aSrc[30]; aDst[ 6] = aSrc[31];
+    aDst[57] = aSrc[32]; aDst[ 9] = aSrc[33]; aDst[43] = aSrc[34]; aDst[27] = aSrc[35];
+    aDst[35] = aSrc[36]; aDst[21] = aSrc[37]; aDst[53] = aSrc[38]; aDst[ 7] = aSrc[39];
+    aDst[58] = aSrc[40]; aDst[17] = aSrc[41]; aDst[44] = aSrc[42]; aDst[45] = aSrc[43];
+    aDst[37] = aSrc[44]; aDst[29] = aSrc[45]; aDst[52] = aSrc[46]; aDst[15] = aSrc[47];
+    aDst[59] = aSrc[48]; aDst[25] = aSrc[49]; aDst[33] = aSrc[50]; aDst[41] = aSrc[51];
+    aDst[49] = aSrc[52]; aDst[50] = aSrc[53]; aDst[51] = aSrc[54]; aDst[23] = aSrc[55];
+    aDst[60] = aSrc[56]; aDst[61] = aSrc[57]; aDst[62] = aSrc[58]; aDst[63] = aSrc[59];
+    aDst[55] = aSrc[60]; aDst[47] = aSrc[61]; aDst[39] = aSrc[62]; aDst[31] = aSrc[63];
+    memcpy(mDataBase, mTemp, 64);
+}
+
+void FM8::PinwheelRightQuarterA() {
+
+    std::uint8_t *aSrc = mDataBase;
+    std::uint8_t *aTmp = mTemp;
+
+    aTmp[ 0] = aSrc[16]; aTmp[ 1] = aSrc[ 8]; aTmp[ 2] = aSrc[ 0]; aTmp[ 3] = aSrc[ 1];
+    aTmp[ 8] = aSrc[24]; aTmp[ 9] = aSrc[10]; aTmp[10] = aSrc[18]; aTmp[11] = aSrc[ 2];
+    aTmp[16] = aSrc[25]; aTmp[17] = aSrc[ 9]; aTmp[18] = aSrc[17]; aTmp[19] = aSrc[ 3];
+    aTmp[24] = aSrc[26]; aTmp[25] = aSrc[27]; aTmp[26] = aSrc[19]; aTmp[27] = aSrc[11];
+
+    aSrc[ 0] = aTmp[ 0]; aSrc[ 1] = aTmp[ 1]; aSrc[ 2] = aTmp[ 2]; aSrc[ 3] = aTmp[ 3];
+    aSrc[ 8] = aTmp[ 8]; aSrc[ 9] = aTmp[ 9]; aSrc[10] = aTmp[10]; aSrc[11] = aTmp[11];
+    aSrc[16] = aTmp[16]; aSrc[17] = aTmp[17]; aSrc[18] = aTmp[18]; aSrc[19] = aTmp[19];
+    aSrc[24] = aTmp[24]; aSrc[25] = aTmp[25]; aSrc[26] = aTmp[26]; aSrc[27] = aTmp[27];
+}
+
+void FM8::PinwheelRightQuarterB() {
+
+    std::uint8_t *aSrc = mDataBase;
+    std::uint8_t *aTmp = mTemp;
+
+    aTmp[ 4] = aSrc[20]; aTmp[ 5] = aSrc[12]; aTmp[ 6] = aSrc[ 4]; aTmp[ 7] = aSrc[ 5];
+    aTmp[12] = aSrc[28]; aTmp[13] = aSrc[14]; aTmp[14] = aSrc[22]; aTmp[15] = aSrc[ 6];
+    aTmp[20] = aSrc[29]; aTmp[21] = aSrc[13]; aTmp[22] = aSrc[21]; aTmp[23] = aSrc[ 7];
+    aTmp[28] = aSrc[30]; aTmp[29] = aSrc[31]; aTmp[30] = aSrc[23]; aTmp[31] = aSrc[15];
+
+    aSrc[ 4] = aTmp[ 4]; aSrc[ 5] = aTmp[ 5]; aSrc[ 6] = aTmp[ 6]; aSrc[ 7] = aTmp[ 7];
+    aSrc[12] = aTmp[12]; aSrc[13] = aTmp[13]; aSrc[14] = aTmp[14]; aSrc[15] = aTmp[15];
+    aSrc[20] = aTmp[20]; aSrc[21] = aTmp[21]; aSrc[22] = aTmp[22]; aSrc[23] = aTmp[23];
+    aSrc[28] = aTmp[28]; aSrc[29] = aTmp[29]; aSrc[30] = aTmp[30]; aSrc[31] = aTmp[31];
+}
+
+void FM8::PinwheelRightQuarterC() {
+
+    std::uint8_t *aSrc = mDataBase;
+    std::uint8_t *aTmp = mTemp;
+
+    aTmp[32] = aSrc[48]; aTmp[33] = aSrc[40]; aTmp[34] = aSrc[32]; aTmp[35] = aSrc[33];
+    aTmp[40] = aSrc[56]; aTmp[41] = aSrc[42]; aTmp[42] = aSrc[50]; aTmp[43] = aSrc[34];
+    aTmp[48] = aSrc[57]; aTmp[49] = aSrc[41]; aTmp[50] = aSrc[49]; aTmp[51] = aSrc[35];
+    aTmp[56] = aSrc[58]; aTmp[57] = aSrc[59]; aTmp[58] = aSrc[51]; aTmp[59] = aSrc[43];
+
+    aSrc[32]=aTmp[32]; aSrc[33]=aTmp[33]; aSrc[34]=aTmp[34]; aSrc[35]=aTmp[35];
+    aSrc[40]=aTmp[40]; aSrc[41]=aTmp[41]; aSrc[42]=aTmp[42]; aSrc[43]=aTmp[43];
+    aSrc[48]=aTmp[48]; aSrc[49]=aTmp[49]; aSrc[50]=aTmp[50]; aSrc[51]=aTmp[51];
+    aSrc[56]=aTmp[56]; aSrc[57]=aTmp[57]; aSrc[58]=aTmp[58]; aSrc[59]=aTmp[59];
+}
+
+void FM8::PinwheelRightQuarterD() {
+
+    std::uint8_t *aSrc = mDataBase;
+    std::uint8_t *aTmp = mTemp;
+
+    aTmp[36] = aSrc[52]; aTmp[37] = aSrc[44]; aTmp[38] = aSrc[36]; aTmp[39] = aSrc[37];
+    aTmp[44] = aSrc[60]; aTmp[45] = aSrc[46]; aTmp[46] = aSrc[54]; aTmp[47] = aSrc[38];
+    aTmp[52] = aSrc[61]; aTmp[53] = aSrc[45]; aTmp[54] = aSrc[53]; aTmp[55] = aSrc[39];
+    aTmp[60] = aSrc[62]; aTmp[61] = aSrc[63]; aTmp[62] = aSrc[55]; aTmp[63] = aSrc[47];
+
+    aSrc[36]=aTmp[36]; aSrc[37]=aTmp[37]; aSrc[38]=aTmp[38]; aSrc[39]=aTmp[39];
+    aSrc[44]=aTmp[44]; aSrc[45]=aTmp[45]; aSrc[46]=aTmp[46]; aSrc[47]=aTmp[47];
+    aSrc[52]=aTmp[52]; aSrc[53]=aTmp[53]; aSrc[54]=aTmp[54]; aSrc[55]=aTmp[55];
+    aSrc[60]=aTmp[60]; aSrc[61]=aTmp[61]; aSrc[62]=aTmp[62]; aSrc[63]=aTmp[63];
+}
+
+void FM8::PinwheelLeftQuarterA() {
+
+    std::uint8_t *aSrc = mDataBase;
+    std::uint8_t *aTmp = mTemp;
+
+    aTmp[16] = aSrc[ 0]; aTmp[ 8] = aSrc[ 1]; aTmp[ 0] = aSrc[ 2]; aTmp[ 1] = aSrc[ 3];
+    aTmp[24] = aSrc[ 8]; aTmp[10] = aSrc[ 9]; aTmp[18] = aSrc[10]; aTmp[ 2] = aSrc[11];
+    aTmp[25] = aSrc[16]; aTmp[ 9] = aSrc[17]; aTmp[17] = aSrc[18]; aTmp[ 3] = aSrc[19];
+    aTmp[26] = aSrc[24]; aTmp[27] = aSrc[25]; aTmp[19] = aSrc[26]; aTmp[11] = aSrc[27];
+
+    aSrc[ 0] = aTmp[ 0]; aSrc[ 1] = aTmp[ 1]; aSrc[ 2] = aTmp[ 2]; aSrc[ 3] = aTmp[ 3];
+    aSrc[ 8] = aTmp[ 8]; aSrc[ 9] = aTmp[ 9]; aSrc[10] = aTmp[10]; aSrc[11] = aTmp[11];
+    aSrc[16] = aTmp[16]; aSrc[17] = aTmp[17]; aSrc[18] = aTmp[18]; aSrc[19] = aTmp[19];
+    aSrc[24] = aTmp[24]; aSrc[25] = aTmp[25]; aSrc[26] = aTmp[26]; aSrc[27] = aTmp[27];
+}
+
+void FM8::PinwheelLeftQuarterB() {
+
+    std::uint8_t *aSrc = mDataBase;
+    std::uint8_t *aTmp = mTemp;
+
+    aTmp[20] = aSrc[ 4]; aTmp[12] = aSrc[ 5]; aTmp[ 4] = aSrc[ 6]; aTmp[ 5] = aSrc[ 7];
+    aTmp[28] = aSrc[12]; aTmp[14] = aSrc[13]; aTmp[22] = aSrc[14]; aTmp[ 6] = aSrc[15];
+    aTmp[29] = aSrc[20]; aTmp[13] = aSrc[21]; aTmp[21] = aSrc[22]; aTmp[ 7] = aSrc[23];
+    aTmp[30] = aSrc[28]; aTmp[31] = aSrc[29]; aTmp[23] = aSrc[30]; aTmp[15] = aSrc[31];
+
+    aSrc[ 4] = aTmp[ 4]; aSrc[ 5] = aTmp[ 5]; aSrc[ 6] = aTmp[ 6]; aSrc[ 7] = aTmp[ 7];
+    aSrc[12] = aTmp[12]; aSrc[13] = aTmp[13]; aSrc[14] = aTmp[14]; aSrc[15] = aTmp[15];
+    aSrc[20] = aTmp[20]; aSrc[21] = aTmp[21]; aSrc[22] = aTmp[22]; aSrc[23] = aTmp[23];
+    aSrc[28] = aTmp[28]; aSrc[29] = aTmp[29]; aSrc[30] = aTmp[30]; aSrc[31] = aTmp[31];
+}
+
+void FM8::PinwheelLeftQuarterC() {
+
+    std::uint8_t *aSrc = mDataBase;
+    std::uint8_t *aTmp = mTemp;
+
+    aTmp[48] = aSrc[32]; aTmp[40] = aSrc[33]; aTmp[32] = aSrc[34]; aTmp[33] = aSrc[35];
+    aTmp[56] = aSrc[40]; aTmp[42] = aSrc[41]; aTmp[50] = aSrc[42]; aTmp[34] = aSrc[43];
+    aTmp[57] = aSrc[48]; aTmp[41] = aSrc[49]; aTmp[49] = aSrc[50]; aTmp[35] = aSrc[51];
+    aTmp[58] = aSrc[56]; aTmp[59] = aSrc[57]; aTmp[51] = aSrc[58]; aTmp[43] = aSrc[59];
+
+    aSrc[32]=aTmp[32]; aSrc[33]=aTmp[33]; aSrc[34]=aTmp[34]; aSrc[35]=aTmp[35];
+    aSrc[40]=aTmp[40]; aSrc[41]=aTmp[41]; aSrc[42]=aTmp[42]; aSrc[43]=aTmp[43];
+    aSrc[48]=aTmp[48]; aSrc[49]=aTmp[49]; aSrc[50]=aTmp[50]; aSrc[51]=aTmp[51];
+    aSrc[56]=aTmp[56]; aSrc[57]=aTmp[57]; aSrc[58]=aTmp[58]; aSrc[59]=aTmp[59];
+}
+
+void FM8::PinwheelLeftQuarterD() {
+
+    std::uint8_t *aSrc = mDataBase;
+    std::uint8_t *aTmp = mTemp;
+
+    aTmp[52] = aSrc[36]; aTmp[44] = aSrc[37]; aTmp[36] = aSrc[38]; aTmp[37] = aSrc[39];
+    aTmp[60] = aSrc[44]; aTmp[46] = aSrc[45]; aTmp[54] = aSrc[46]; aTmp[38] = aSrc[47];
+    aTmp[61] = aSrc[52]; aTmp[45] = aSrc[53]; aTmp[53] = aSrc[54]; aTmp[39] = aSrc[55];
+    aTmp[62] = aSrc[60]; aTmp[63] = aSrc[61]; aTmp[55] = aSrc[62]; aTmp[47] = aSrc[63];
+
+    aSrc[36]=aTmp[36]; aSrc[37]=aTmp[37]; aSrc[38]=aTmp[38]; aSrc[39]=aTmp[39];
+    aSrc[44]=aTmp[44]; aSrc[45]=aTmp[45]; aSrc[46]=aTmp[46]; aSrc[47]=aTmp[47];
+    aSrc[52]=aTmp[52]; aSrc[53]=aTmp[53]; aSrc[54]=aTmp[54]; aSrc[55]=aTmp[55];
+    aSrc[60]=aTmp[60]; aSrc[61]=aTmp[61]; aSrc[62]=aTmp[62]; aSrc[63]=aTmp[63];
+}
+
 bool FM8::operator==(const FM8& other) const {
     return std::memcmp(mDataBase, other.mDataBase, kSize) == 0;
 }
